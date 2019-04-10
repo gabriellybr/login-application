@@ -1,10 +1,12 @@
 package br.com.etecia.loggin;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +23,23 @@ public class MainActivity extends AppCompatActivity {
               TextView textPassword = findViewById(R.id.password);
               String Username = textUsername.getText().toString();
               String password = textPassword.getText().toString();
+              if(Username.equals("Etecia")&& password.equals("etec") ){
+                  System.out.println("Logado com sucesso");
+
+
+                      Intent intentGohome = new Intent( MainActivity.this,
+                          Home.class);
+                      startActivity(intentGohome);
+
+              }
+              else{
+                  System.out.println("Erro ao logar!se corrija parsa!");
+
+              }
+              private void alert (string message){
+                  Toast.makeText(This,message, Toast.LENGTH_SHORT).show();
+
+              }
           }
       });
 
